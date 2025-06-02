@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Phone, CheckCircle, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -40,11 +39,11 @@ const LeadCaptureDemo = ({ variant = 'hero', className = '' }: LeadCaptureDemoPr
   const getButtonStyles = () => {
     switch (variant) {
       case 'hero':
-        return "group px-10 py-5 text-xl font-semibold text-white bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105";
+        return "group inline-flex items-center px-10 py-5 text-xl font-semibold text-gray-900 bg-white hover:bg-gray-100 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105";
       case 'cta':
-        return "group px-12 py-6 text-2xl font-semibold text-gray-900 bg-gradient-to-r from-slate-300 to-slate-400 hover:from-slate-400 hover:to-slate-500 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105";
+        return "group inline-flex items-center px-12 py-6 text-2xl font-semibold text-gray-900 bg-white hover:bg-gray-100 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105";
       default:
-        return "group inline-flex items-center px-12 py-6 text-2xl font-semibold text-slate-800 bg-white hover:bg-gray-50 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105";
+        return "group inline-flex items-center px-12 py-6 text-2xl font-semibold text-gray-900 bg-white hover:bg-gray-100 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105";
     }
   };
 
@@ -76,14 +75,14 @@ const LeadCaptureDemo = ({ variant = 'hero', className = '' }: LeadCaptureDemoPr
           
           <button 
             onClick={handlePhoneCall}
-            className="w-full group px-8 py-4 text-xl font-semibold text-white bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            className="w-full group inline-flex items-center justify-center px-8 py-4 text-xl font-semibold text-gray-900 bg-white hover:bg-gray-100 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            <Phone className="inline-block w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
+            <Phone className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
             Call (267) 843-8637
           </button>
           
           <p className="text-sm text-gray-500 text-center mt-4">
-            Works best on mobile devices
+            must be on a mobile phone
           </p>
         </div>
       </div>
@@ -94,17 +93,17 @@ const LeadCaptureDemo = ({ variant = 'hero', className = '' }: LeadCaptureDemoPr
     <div className={`${className} animate-fade-in`}>
       <div className="bg-white p-8 rounded-2xl shadow-2xl border border-slate-200 max-w-md mx-auto">
         <div className="text-center mb-6">
-          <Mail className="w-12 h-12 text-slate-600 mx-auto mb-4" />
+          <Mail className="w-12 h-12 text-gray-900 mx-auto mb-4" />
           <h3 className="text-2xl font-bold text-gray-900 mb-2">Get Instant Demo Access</h3>
-          <p className="text-gray-600">
-            Enter your email to unlock the AI receptionist demo
+          <p className="text-gray-900">
+            we'll also email you with more info on the agent
           </p>
         </div>
         
         <form onSubmit={handleEmailSubmit} className="space-y-4">
           <div>
-            <Label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-              Business Email
+            <Label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
+              Email
             </Label>
             <Input
               type="email"
@@ -113,7 +112,7 @@ const LeadCaptureDemo = ({ variant = 'hero', className = '' }: LeadCaptureDemoPr
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@yourcompany.com"
               required
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all text-gray-900 placeholder:text-gray-500"
               disabled={isSubmitting}
             />
           </div>
@@ -121,7 +120,7 @@ const LeadCaptureDemo = ({ variant = 'hero', className = '' }: LeadCaptureDemoPr
           <Button
             type="submit"
             disabled={isSubmitting || !email.includes('@')}
-            className="w-full py-3 px-6 text-lg font-semibold text-white bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full py-3 px-6 text-lg font-semibold text-white bg-gray-900 hover:bg-black rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <div className="flex items-center justify-center">
@@ -134,7 +133,7 @@ const LeadCaptureDemo = ({ variant = 'hero', className = '' }: LeadCaptureDemoPr
           </Button>
         </form>
         
-        <p className="text-xs text-gray-500 text-center mt-4">
+        <p className="text-xs text-gray-900 text-center mt-4">
           We respect your privacy. No spam, unsubscribe anytime.
         </p>
       </div>
