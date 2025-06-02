@@ -1,4 +1,3 @@
-
 import { Phone, CheckCircle, XCircle, Star, Brain, Settings, Rocket } from "lucide-react";
 
 const Index = () => {
@@ -9,11 +8,11 @@ const Index = () => {
   return (
     <main className="bg-white text-gray-900 overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative py-24 px-6 text-center bg-gradient-to-br from-blue-50 via-white to-green-50">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-green-600/5"></div>
+      <section className="relative py-24 px-6 text-center bg-gradient-to-br from-purple-50 via-white to-purple-50">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 to-purple-600/5"></div>
         <div className="relative max-w-5xl mx-auto">
           <div className="inline-block mb-6">
-            <span className="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-semibold">
+            <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-semibold">
               🚀 AI-Powered Business Solution
             </span>
           </div>
@@ -25,10 +24,10 @@ const Index = () => {
           </p>
           <button 
             onClick={handleDemoCall}
-            className="group px-10 py-5 text-xl font-semibold text-white bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            className="group px-10 py-5 text-xl font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
           >
             <Phone className="inline-block w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
-            🟢 Try the Live Demo Now
+            🟣 Try the Live Demo Now
           </button>
           <p className="mt-4 text-sm text-gray-500">
             No setup required • Instant demo call
@@ -61,7 +60,7 @@ const Index = () => {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-purple-600 bg-clip-text text-transparent">
               Introducing Your AI-Powered Voice Agent by Pentridge Media
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -76,11 +75,11 @@ const Index = () => {
               { icon: "💬", title: "Instant Answers", desc: "Professionally handles FAQ & basic inquiries in real-time." },
               { icon: "📊", title: "Call Analytics", desc: "Get insights from conversations to grow your business." }
             ].map((feature, index) => (
-              <div key={index} className="flex items-start space-x-4 p-6 bg-gradient-to-r from-blue-50 to-green-50 rounded-xl hover:shadow-lg transition-all">
+              <div key={index} className="flex items-start space-x-4 p-6 bg-gradient-to-r from-purple-50 to-purple-50 rounded-xl hover:shadow-lg transition-all">
                 <div className="text-3xl">{feature.icon}</div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
+                    <CheckCircle className="w-5 h-5 text-purple-500 mr-2" />
                     {feature.title}
                   </h3>
                   <p className="text-gray-600">{feature.desc}</p>
@@ -92,7 +91,7 @@ const Index = () => {
       </section>
 
       {/* Demo Call Section */}
-      <section className="bg-gradient-to-br from-green-600 to-blue-600 py-24 px-6 text-center text-white">
+      <section className="bg-gradient-to-br from-purple-600 to-purple-600 py-24 px-6 text-center text-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-5xl font-bold mb-6">
             Don't Just Take Our Word—Try It Yourself
@@ -102,12 +101,12 @@ const Index = () => {
           </p>
           <button 
             onClick={handleDemoCall}
-            className="group inline-flex items-center px-12 py-6 text-2xl font-semibold text-green-600 bg-white hover:bg-gray-50 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
+            className="group inline-flex items-center px-12 py-6 text-2xl font-semibold text-purple-600 bg-white hover:bg-gray-50 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
           >
             <Phone className="w-8 h-8 mr-4 group-hover:rotate-12 transition-transform" />
-            🟢 Launch Your Demo Call Now
+            🟣 Launch Your Demo Call Now
           </button>
-          <p className="mt-6 text-green-100">
+          <p className="mt-6 text-purple-100">
             Works best on mobile. Or call us directly: <strong>(267) 843-8637</strong>
           </p>
         </div>
@@ -146,31 +145,31 @@ const Index = () => {
                 popular: false
               }
             ].map((tier, index) => (
-              <div key={index} className={`relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all ${tier.popular ? 'ring-2 ring-green-500 transform scale-105' : ''}`}>
+              <div key={index} className={`relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all ${tier.popular ? 'ring-2 ring-purple-500 transform scale-105' : ''}`}>
                 {tier.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    <span className="bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
                       Most Popular
                     </span>
                   </div>
                 )}
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.plan}</h3>
-                  <div className="text-3xl font-bold text-green-600 mb-1">{tier.setup}</div>
+                  <div className="text-3xl font-bold text-purple-600 mb-1">{tier.setup}</div>
                   <div className="text-xl text-gray-600 mb-3">{tier.monthly}</div>
                   <p className="text-sm text-gray-500">{tier.ideal}</p>
                 </div>
                 <ul className="space-y-3 mb-8">
                   {tier.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-purple-500 mr-3 flex-shrink-0" />
                       <span className="text-gray-700">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 <button className={`w-full py-3 rounded-xl font-semibold transition-all ${
                   tier.popular 
-                    ? 'bg-green-600 text-white hover:bg-green-700' 
+                    ? 'bg-purple-600 text-white hover:bg-purple-700' 
                     : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                 }`}>
                   Get Started
@@ -211,10 +210,10 @@ const Index = () => {
             ].map((item, index) => (
               <div key={index} className="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all">
                 <div className="relative inline-block mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-blue-600 rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-purple-600 rounded-full flex items-center justify-center">
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
                     {item.step}
                   </div>
                 </div>
@@ -269,10 +268,10 @@ const Index = () => {
           </p>
           <button 
             onClick={handleDemoCall}
-            className="group px-12 py-6 text-2xl font-semibold text-gray-900 bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
+            className="group px-12 py-6 text-2xl font-semibold text-gray-900 bg-gradient-to-r from-purple-400 to-purple-500 hover:from-purple-500 hover:to-purple-600 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
           >
             <Phone className="inline-block w-8 h-8 mr-4 group-hover:rotate-12 transition-transform" />
-            🟢 Start Your AI Demo Now
+            🟣 Start Your AI Demo Now
           </button>
           <p className="mt-6 text-gray-300">
             No commitment required • Experience the future of customer service
