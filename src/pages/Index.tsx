@@ -11,9 +11,14 @@ const Index = () => {
       {/* Header */}
       <header className="absolute top-0 left-0 right-0 z-10 px-6 py-6">
         <div className="max-w-7xl mx-auto flex justify-end">
-          <button className="px-6 py-3 bg-white text-gray-900 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg">
+          <a 
+            href="https://cal.com/akinyemi-bajulaiye-2jua88/15-min-meeting"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 bg-white text-gray-900 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg"
+          >
             Book an Intro Call
-          </button>
+          </a>
         </div>
       </header>
 
@@ -192,9 +197,14 @@ const Index = () => {
           <p className="text-xl mb-10 text-gray-400 leading-relaxed">
             Book a 15-minute discovery call to get your agent live
           </p>
-          <button className="px-12 py-6 text-2xl font-semibold text-gray-900 bg-white hover:bg-gray-100 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+          <a 
+            href="https://cal.com/akinyemi-bajulaiye-2jua88/15-min-meeting"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-12 py-6 text-2xl font-semibold text-gray-900 bg-white hover:bg-gray-100 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
+          >
             Book A Discovery Call
-          </button>
+          </a>
           <p className="mt-6 text-gray-500">
             No commitment required • Experience the future of customer service
           </p>
