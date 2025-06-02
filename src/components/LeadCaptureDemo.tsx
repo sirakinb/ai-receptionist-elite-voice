@@ -56,7 +56,7 @@ const LeadCaptureDemo = ({ variant = 'hero', className = '' }: LeadCaptureDemoPr
           className={getButtonStyles()}
         >
           <Phone className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
-          🔵 Try the Live Demo Now
+          Try the Live Demo Now
         </button>
       </div>
     );
