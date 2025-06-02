@@ -1,5 +1,5 @@
-
-import { Phone, CheckCircle, XCircle, Star, Brain, Settings, Rocket } from "lucide-react";
+import { CheckCircle, XCircle, Star, Brain, Settings, Rocket } from "lucide-react";
+import LeadCaptureDemo from "@/components/LeadCaptureDemo";
 
 const Index = () => {
   const handleDemoCall = () => {
@@ -23,13 +23,7 @@ const Index = () => {
           <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
             Instantly book more appointments, answer customer questions, and scale your business—without hiring more staff.
           </p>
-          <button 
-            onClick={handleDemoCall}
-            className="group px-10 py-5 text-xl font-semibold text-white bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-          >
-            <Phone className="inline-block w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
-            🔵 Try the Live Demo Now
-          </button>
+          <LeadCaptureDemo variant="hero" />
           <p className="mt-4 text-sm text-gray-500">
             No setup required • Instant demo call
           </p>
@@ -98,18 +92,9 @@ const Index = () => {
             Don't Just Take Our Word—Try It Yourself
           </h2>
           <p className="text-xl mb-10 opacity-90">
-            Click below to speak directly with our AI receptionist demo. Experience exactly what your customers will.
+            Enter your email below to get instant access to our AI receptionist demo. Experience exactly what your customers will.
           </p>
-          <button 
-            onClick={handleDemoCall}
-            className="group inline-flex items-center px-12 py-6 text-2xl font-semibold text-slate-800 bg-white hover:bg-gray-50 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
-          >
-            <Phone className="w-8 h-8 mr-4 group-hover:rotate-12 transition-transform" />
-            🔵 Launch Your Demo Call Now
-          </button>
-          <p className="mt-6 text-slate-200">
-            Works best on mobile. Or call us directly: <strong>(267) 843-8637</strong>
-          </p>
+          <LeadCaptureDemo variant="inline" />
         </div>
       </section>
 
@@ -265,15 +250,9 @@ const Index = () => {
             Ready to Give Your Business a 24/7 Advantage?
           </h2>
           <p className="text-xl mb-10 opacity-90">
-            Click below, experience a live demo, and start booking more customers today.
+            Enter your email below to experience a live demo and start booking more customers today.
           </p>
-          <button 
-            onClick={handleDemoCall}
-            className="group px-12 py-6 text-2xl font-semibold text-gray-900 bg-gradient-to-r from-slate-300 to-slate-400 hover:from-slate-400 hover:to-slate-500 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
-          >
-            <Phone className="inline-block w-8 h-8 mr-4 group-hover:rotate-12 transition-transform" />
-            🔵 Start Your AI Demo Now
-          </button>
+          <LeadCaptureDemo variant="cta" />
           <p className="mt-6 text-gray-300">
             No commitment required • Experience the future of customer service
           </p>
