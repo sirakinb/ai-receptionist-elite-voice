@@ -122,14 +122,14 @@ const LeadCaptureDemo = ({ variant = 'hero', className = '' }: LeadCaptureDemoPr
         <form onSubmit={handleEmailSubmit} className="space-y-4">
           <div>
             <Label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
-              Name
+              First Name
             </Label>
             <Input
               type="text"
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Your Name"
+              placeholder="Your First Name"
               className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all text-gray-900 placeholder:text-gray-500"
               disabled={isSubmitting}
             />
