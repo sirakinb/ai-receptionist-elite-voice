@@ -25,8 +25,23 @@ const LeadCaptureDemo = ({ variant = 'hero', className = '' }: LeadCaptureDemoPr
     
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      // Send email to Make.com webhook
+      await fetch('https://hook.us2.make.com/m1c5cugr1cf4zusz7c4go7cbdb4xf28y', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          timestamp: new Date().toISOString(),
+          source: 'ai-receptionist-demo'
+        })
+      });
+    } catch (error) {
+      console.error('Error sending email to webhook:', error);
+      // Continue to show phone even if webhook fails
+    }
     
     setIsSubmitting(false);
     setShowPhone(true);
