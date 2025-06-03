@@ -11,6 +11,7 @@ interface LeadCaptureDemoProps {
 
 const LeadCaptureDemo = ({ variant = 'hero', className = '' }: LeadCaptureDemoProps) => {
   const [showForm, setShowForm] = useState(false);
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [showPhone, setShowPhone] = useState(false);
@@ -27,13 +28,14 @@ const LeadCaptureDemo = ({ variant = 'hero', className = '' }: LeadCaptureDemoPr
     setIsSubmitting(true);
     
     try {
-      // Send email and phone to Make.com webhook
+      // Send name, email and phone to Make.com webhook
       await fetch('https://hook.us2.make.com/m1c5cugr1cf4zusz7c4go7cbdb4xf28y', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          name: name || null,
           email: email,
           phone: phone || null,
           timestamp: new Date().toISOString(),
@@ -118,6 +120,21 @@ const LeadCaptureDemo = ({ variant = 'hero', className = '' }: LeadCaptureDemoPr
         </div>
         
         <form onSubmit={handleEmailSubmit} className="space-y-4">
+          <div>
+            <Label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
+              Name
+            </Label>
+            <Input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your Name"
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all text-gray-900 placeholder:text-gray-500"
+              disabled={isSubmitting}
+            />
+          </div>
+
           <div>
             <Label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
               Email <span className="text-red-500">*</span>
