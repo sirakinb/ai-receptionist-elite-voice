@@ -12,6 +12,7 @@ interface LeadCaptureDemoProps {
 const LeadCaptureDemo = ({ variant = 'hero', className = '' }: LeadCaptureDemoProps) => {
   const [showForm, setShowForm] = useState(false);
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [showPhone, setShowPhone] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -26,7 +27,7 @@ const LeadCaptureDemo = ({ variant = 'hero', className = '' }: LeadCaptureDemoPr
     setIsSubmitting(true);
     
     try {
-      // Send email to Make.com webhook
+      // Send email and phone to Make.com webhook
       await fetch('https://hook.us2.make.com/m1c5cugr1cf4zusz7c4go7cbdb4xf28y', {
         method: 'POST',
         headers: {
@@ -34,12 +35,13 @@ const LeadCaptureDemo = ({ variant = 'hero', className = '' }: LeadCaptureDemoPr
         },
         body: JSON.stringify({
           email: email,
+          phone: phone || null,
           timestamp: new Date().toISOString(),
           source: 'ai-receptionist-demo'
         })
       });
     } catch (error) {
-      console.error('Error sending email to webhook:', error);
+      console.error('Error sending data to webhook:', error);
       // Continue to show phone even if webhook fails
     }
     
@@ -118,7 +120,7 @@ const LeadCaptureDemo = ({ variant = 'hero', className = '' }: LeadCaptureDemoPr
         <form onSubmit={handleEmailSubmit} className="space-y-4">
           <div>
             <Label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
-              Email
+              Email <span className="text-red-500">*</span>
             </Label>
             <Input
               type="email"
@@ -127,6 +129,21 @@ const LeadCaptureDemo = ({ variant = 'hero', className = '' }: LeadCaptureDemoPr
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@yourcompany.com"
               required
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all text-gray-900 placeholder:text-gray-500"
+              disabled={isSubmitting}
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="phone" className="block text-sm font-medium text-gray-900 mb-2">
+              Phone
+            </Label>
+            <Input
+              type="tel"
+              id="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="(555) 123-4567"
               className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all text-gray-900 placeholder:text-gray-500"
               disabled={isSubmitting}
             />
